@@ -41,14 +41,11 @@ namespace Hospital
 
         public void SortName() 
         {
-            var sortPatientAge = _patients.OrderBy(patient => patient.FullName);
+            var sortPatientName = _patients.OrderBy(patient => patient.FullName);
 
             Console.WriteLine("Сортировка по Имени");
 
-            foreach (Patient patient in sortPatientAge)
-            {
-                Console.WriteLine($"{patient.FullName} {patient.Age} {patient.Disease}");
-            }
+            ShowSortList(sortPatientName);
 
             Console.ReadKey();
         }
@@ -59,10 +56,7 @@ namespace Hospital
 
             Console.WriteLine("Сортировка по возрасту");
 
-            foreach (Patient patient in sortPatientAge)
-            {
-                Console.WriteLine($"{patient.FullName} {patient.Age} {patient.Disease}");
-            }
+            ShowSortList(sortPatientAge);
 
             Console.ReadKey();
         }
@@ -81,10 +75,7 @@ namespace Hospital
 
             if (countPatients > 0)
             {
-                foreach (Patient patient in sortPatientDisease)
-                {
-                    Console.WriteLine($"{patient.FullName} {patient.Age} {patient.Disease}");
-                }
+                ShowSortList(sortPatientDisease);
             }
             else
             {
@@ -92,6 +83,14 @@ namespace Hospital
             }
 
             Console.ReadLine();
+        }
+
+        private void ShowSortList(IEnumerable<Patient> sortList) 
+        {
+            foreach (Patient patient in sortList)
+            {
+                Console.WriteLine($"{patient.FullName} {patient.Age} {patient.Disease}");
+            }
         }
     }
 }
