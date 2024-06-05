@@ -10,15 +10,15 @@ namespace Hospital
     {
         private List<Patient> _patients = new List<Patient>();
 
-        public Database() 
+        public Database()
         {
             AddPatients();
         }
 
-        private void AddPatients() 
+        private void AddPatients()
         {
-            _patients.Add(new Patient("Дуров Эдуард Самадович","Ангина",35));
-            _patients.Add(new Patient("Гонинов Вячеслав Американович","Ветрянка",35));
+            _patients.Add(new Patient("Дуров Эдуард Самадович", "Ангина", 35));
+            _patients.Add(new Patient("Гонинов Вячеслав Американович", "Ветрянка", 35));
             _patients.Add(new Patient("Громов Аркадий Олегович", "Атит", 37));
             _patients.Add(new Patient("Колокольчиков Игорь Аркадьевич", "Орв", 40));
             _patients.Add(new Patient("Клонов Клон Клонович", "Сердечная недостаточность", 41));
@@ -27,6 +27,16 @@ namespace Hospital
             _patients.Add(new Patient("Прищиков Олег Олегович", "Алергия", 78));
             _patients.Add(new Patient("Зубнов Антон Артемонович", "Стамотит", 51));
             _patients.Add(new Patient("Грунов Юрий Дмитриевич", "Насморк", 19));
+        }
+
+        public void ShowPatients()
+        {
+            foreach (Patient patient in _patients)
+            {
+                Console.WriteLine($"{patient.FullName} {patient.Age} {patient.Disease}");
+            }
+
+            Console.WriteLine();
         }
     }
 }

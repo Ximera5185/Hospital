@@ -10,6 +10,9 @@ namespace Hospital
     {
         static void Main(string [] args)
         {
+            Hospital hospital = new Hospital();
+
+            hospital.Run();
         }
     }
 }
