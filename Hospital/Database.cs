@@ -39,7 +39,7 @@ namespace Hospital
             Console.WriteLine();
         }
 
-        public void SortName() 
+        public void ShowPotientName() 
         {
             var sortPatientName = _patients.OrderBy(patient => patient.FullName);
 
@@ -50,7 +50,7 @@ namespace Hospital
             Console.ReadKey();
         }
 
-        public void SortAge() 
+        public void ShowPotientAge() 
         {
             var sortPatientAge = _patients.OrderBy(patient => patient.Age);
 
