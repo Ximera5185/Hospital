@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Hospital
 {
@@ -43,6 +39,7 @@ namespace Hospital
                         _database.SortAge();
                         break;
                     case ShowPatientDiseaseMenu:
+                        _database.ShowPotientDisease();
                         break;
                     case ExitProgrammMenu:
                         isProgrammWork = false;

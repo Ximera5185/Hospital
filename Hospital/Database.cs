@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 namespace Hospital
 {
     internal class Database
@@ -66,6 +65,33 @@ namespace Hospital
             }
 
             Console.ReadKey();
+        }
+
+        public void ShowPotientDisease() 
+        {
+            string inputUserDisease = "";
+
+            Console.WriteLine("Введите заболевание");
+
+            inputUserDisease = Console.ReadLine().ToUpper();
+
+            var sortPatientDisease = _patients.Where(patient => patient.Disease.ToUpper() == inputUserDisease);
+
+            int countPatients = sortPatientDisease.Count();
+
+            if (countPatients > 0)
+            {
+                foreach (Patient patient in sortPatientDisease)
+                {
+                    Console.WriteLine($"{patient.FullName} {patient.Age} {patient.Disease}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Нет такого диагназа");
+            }
+
+            Console.ReadLine();
         }
     }
 }
