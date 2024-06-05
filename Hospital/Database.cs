@@ -38,5 +38,9 @@ namespace Hospital
 
             Console.WriteLine();
         }
+
+        public void SortName() { }
+
+        public void SortAge() { }
     }
 }
