@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Hospital
 {
     internal class Database
@@ -31,6 +30,8 @@ namespace Hospital
 
         public void ShowPatients()
         {
+            Console.WriteLine("Исходный список");
+
             foreach (Patient patient in _patients)
             {
                 Console.WriteLine($"{patient.FullName} {patient.Age} {patient.Disease}");
@@ -39,8 +40,32 @@ namespace Hospital
             Console.WriteLine();
         }
 
-        public void SortName() { }
+        public void SortName() 
+        {
+            var sortPatientAge = _patients.OrderBy(patient => patient.FullName);
 
-        public void SortAge() { }
+            Console.WriteLine("Сортировка по Имени");
+
+            foreach (Patient patient in sortPatientAge)
+            {
+                Console.WriteLine($"{patient.FullName} {patient.Age} {patient.Disease}");
+            }
+
+            Console.ReadKey();
+        }
+
+        public void SortAge() 
+        {
+            var sortPatientAge = _patients.OrderBy(patient => patient.Age);
+
+            Console.WriteLine("Сортировка по возрасту");
+
+            foreach (Patient patient in sortPatientAge)
+            {
+                Console.WriteLine($"{patient.FullName} {patient.Age} {patient.Disease}");
+            }
+
+            Console.ReadKey();
+        }
     }
 }

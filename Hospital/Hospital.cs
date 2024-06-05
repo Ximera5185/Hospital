@@ -37,8 +37,10 @@ namespace Hospital
                 switch (userInput)
                 {
                     case SortFullNameMenu:
+                        _database.SortName();
                         break;
                     case SortAgeMenu:
+                        _database.SortAge();
                         break;
                     case ShowPatientDiseaseMenu:
                         break;
